@@ -1,0 +1,267 @@
+<br />
+<div class="card">
+    <div class="card-header">
+      Profile
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Email: {{getEmail()}}</h5>
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#passwordModal">
+        Change Password
+    </button>
+    </div>
+  </div>
+
+<div class="container row">
+    <div class="container-fluid col" style="padding-top: 50px;">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Trainers</h5>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#trainerModal">
+                    Learn More
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid col" style="padding-top: 50px;">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Courses</h5>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#courseModal">
+                    Learn More
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid col" style="padding-top: 50px;">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Members</h5>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#memberModal">
+                    Learn More
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid col" style="padding-top: 50px;">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Customers</h5>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#customerModal">
+                    Learn More
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid col" style="padding-top: 50px;">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Admins</h5>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#adminModal">
+                    Learn More
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="passwordModal" tabindex="-1" aria-labelledby="passwordModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Old Password</label>
+                    <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="********">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleFormControlInput2" class="form-label">New Password</label>
+                    <input type="password" class="form-control" id="exampleFormControlInput2" placeholder="********">
+                  </div>
+                  <button type="button" class="btn btn-primary" (click)="changePassword()">
+                    Confirm
+                </button>
+                <h6 *ngIf="errorMessage" class="text-danger">
+                    {{errorMessage}}
+                    <br />
+                </h6>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="trainerModal" tabindex="-1" aria-labelledby="trainerModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Trainer Name</th>
+                            <th scope="col">Experience</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                        </tr>
+                        <tr>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                        </tr>
+                        <tr>
+                            <td>Larry the Bird</td>
+                            <td>test</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="courseModal" tabindex="-1" aria-labelledby="courseModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Course Name</th>
+                            <th scope="col">Duration</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                        </tr>
+                        <tr>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                        </tr>
+                        <tr>
+                            <td>Larry the Bird</td>
+                            <td>test</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="memberModal" tabindex="-1" aria-labelledby="memberModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Member Name</th>
+                            <th scope="col">Since</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                        </tr>
+                        <tr>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                        </tr>
+                        <tr>
+                            <td>Larry the Bird</td>
+                            <td>test</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="customerModal" tabindex="-1" aria-labelledby="customerModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Customer Name</th>
+                            <th scope="col">Joined</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                        </tr>
+                        <tr>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                        </tr>
+                        <tr>
+                            <td>Larry the Bird</td>
+                            <td>test</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="adminModal" tabindex="-1" aria-labelledby="adminModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Admin Name</th>
+                            <th scope="col">Contact</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                        </tr>
+                        <tr>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                        </tr>
+                        <tr>
+                            <td>Larry the Bird</td>
+                            <td>test</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

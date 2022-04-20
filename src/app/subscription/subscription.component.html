@@ -1,0 +1,56 @@
+<br />
+<div class="card">
+    <div class="card-header">
+      Active Subscription
+    </div>
+    <div class="card-body">
+      <div *ngIf="activeSubscription.name === 'N/A'">
+          No active Subscription.
+      </div>
+      <div *ngIf="activeSubscription.name !== 'N/A'">
+        <ol class="list-group list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+              <div class="ms-2 me-auto">
+                <div class="fw-bold">Plan</div>
+                {{activeSubscription.name}}
+              </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+              <div class="ms-2 me-auto">
+                <div class="fw-bold">Duration</div>
+                {{activeSubscription.duration}} Months
+              </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+              <div class="ms-2 me-auto">
+                <div class="fw-bold">Basic Training</div>
+                {{activeSubscription.basic}}
+              </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Personal Training</div>
+                  {{activeSubscription.personal}}
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Timings</div>
+                  {{activeSubscription.timings}}
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Price</div>
+                  {{activeSubscription.price}}
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <button type="button" class="btn btn-danger">
+                    Cancel Subscription
+                </button>
+              </li>
+          </ol>
+      </div>
+    </div>
+  </div>
