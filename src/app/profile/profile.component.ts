@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -9,7 +10,8 @@ import { UserService } from '../services/user.service';
 export class ProfileComponent implements OnInit {
 
   constructor(
-    private userService: UserService
+    private userService: UserService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -26,17 +28,21 @@ export class ProfileComponent implements OnInit {
     return localStorage.getItem('Email');
   }
 
-  passwordData = {
-    oldPassword: '',
-    newPassword: ''
-  }
+  oldPassword= '';
+  newPassword= '';
 
   errorMessage = ''
+  successMessage = '';
 
   changePassword() {
-    this.userService.login(this.passwordData).subscribe((response) => {
+    this.userService.changePassword(this.oldPassword, this.newPassword).subscribe((response) => {
       const successResponse = JSON.parse(JSON.stringify(response));
       console.log(successResponse);
+      this.errorMessage = '';
+      this.successMessage = 'Successfully changed password.';
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
     }, (errorResponse) => {
       console.log(errorResponse.error);
       this.errorMessage = errorResponse.error.error.message;

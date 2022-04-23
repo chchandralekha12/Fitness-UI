@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-subscription',
@@ -7,13 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SubscriptionComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private userService:  UserService
+  ) { }
 
   ngOnInit(): void {
-    const subscription = this.getSubscription(1);
-    if(subscription) {
-      this.activeSubscription = subscription;
-    }
+    this.userService.getSubscription().subscribe((response) => {
+      const successResponse = JSON.parse(JSON.stringify(response));
+      console.log(successResponse);
+      const subscription = this.getSubscription(successResponse.data.subscription);
+      if(subscription) {
+        this.activeSubscription = subscription;
+      }
+    }, (errorResponse) => {
+      console.log(errorResponse.error);
+    })
   }
 
   activeSubscription = {
@@ -57,6 +66,17 @@ export class SubscriptionComponent implements OnInit {
 
   getSubscription(id: number) {
     return this.subscriptions.find(subscription => subscription.id === id);
+  }
+
+  cancelSubscription() {
+    this.userService.cancelSubscription().subscribe((response) => {
+      const successResponse = JSON.parse(JSON.stringify(response));
+      console.log(successResponse);
+      window.location.reload();
+    }, (errorResponse) => {
+      console.log(errorResponse.error);
+      window.location.reload();
+    })
   }
 
 }

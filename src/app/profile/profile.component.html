@@ -74,17 +74,21 @@
             <div class="modal-body">
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Old Password</label>
-                    <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="********">
+                    <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="********" [(ngModel)]="oldPassword">
                   </div>
                   <div class="mb-3">
                     <label for="exampleFormControlInput2" class="form-label">New Password</label>
-                    <input type="password" class="form-control" id="exampleFormControlInput2" placeholder="********">
+                    <input type="password" class="form-control" id="exampleFormControlInput2" placeholder="********" [(ngModel)]="newPassword">
                   </div>
                   <button type="button" class="btn btn-primary" (click)="changePassword()">
                     Confirm
                 </button>
                 <h6 *ngIf="errorMessage" class="text-danger">
                     {{errorMessage}}
+                    <br />
+                </h6>
+                <h6 *ngIf="successMessage" class="text-success">
+                    {{successMessage}}
                     <br />
                 </h6>
             </div>
@@ -110,15 +114,15 @@
                     <tbody>
                         <tr>
                             <td>Mark</td>
-                            <td>Otto</td>
+                            <td>10 Years</td>
                         </tr>
                         <tr>
                             <td>Jacob</td>
-                            <td>Thornton</td>
+                            <td>8 Years</td>
                         </tr>
                         <tr>
                             <td>Larry the Bird</td>
-                            <td>test</td>
+                            <td>7 Years</td>
                         </tr>
                     </tbody>
                 </table>
@@ -143,16 +147,16 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Mark</td>
-                            <td>Otto</td>
+                            <td>Basic</td>
+                            <td>3 Months</td>
                         </tr>
                         <tr>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
+                            <td>Silver</td>
+                            <td>6 Months</td>
                         </tr>
                         <tr>
-                            <td>Larry the Bird</td>
-                            <td>test</td>
+                            <td>Gold</td>
+                            <td>12 Months</td>
                         </tr>
                     </tbody>
                 </table>
@@ -177,16 +181,16 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Mark</td>
-                            <td>Otto</td>
+                            <td>Mike</td>
+                            <td>2018</td>
                         </tr>
                         <tr>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
+                            <td>Crystal</td>
+                            <td>2019</td>
                         </tr>
                         <tr>
-                            <td>Larry the Bird</td>
-                            <td>test</td>
+                            <td>Alex</td>
+                            <td>2021</td>
                         </tr>
                     </tbody>
                 </table>
@@ -211,16 +215,16 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Mark</td>
-                            <td>Otto</td>
+                            <td>Rich Gaspari</td>
+                            <td>2001</td>
                         </tr>
                         <tr>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
+                            <td>Ronnie Coleman</td>
+                            <td>2003</td>
                         </tr>
                         <tr>
-                            <td>Larry the Bird</td>
-                            <td>test</td>
+                            <td>Gary Strydom</td>
+                            <td>2006</td>
                         </tr>
                     </tbody>
                 </table>
@@ -245,16 +249,16 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Mark</td>
-                            <td>Otto</td>
+                            <td>Payal Kadakia</td>
+                            <td>+1 8585969674</td>
                         </tr>
                         <tr>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
+                            <td>Joe de Sena</td>
+                            <td>+1 5252636341</td>
                         </tr>
                         <tr>
-                            <td>Larry the Bird</td>
-                            <td>test</td>
+                            <td>Alberto Perez</td>
+                            <td>+1 8282939371</td>
                         </tr>
                     </tbody>
                 </table>
